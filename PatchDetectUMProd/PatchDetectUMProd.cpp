@@ -64,7 +64,7 @@ int main()
 						}
 						MMPFN pfn = { 0 };
 						if (Comm::queryPfnDatabase(handle, pte.pfn, &pfn)) {
-							if (!pte.nx && !isProto(&pfn) && pfn.ShareCount == 1 && pte.accessed) { //getChargeToSize... I found this as a temporary workaround to stop falses on the nvidia overlay dll. should probaby be replaced by something that exempts a region, such as the nvidia overlay dll
+							if (!pte.nx && !isProto(&pfn) && pfn.ShareCount == 1 && pte.accessed) {
 								cout << hex << page << " is not the original page" << endl;
 								flag += 2;
 								
